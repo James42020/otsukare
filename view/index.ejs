@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Bootstrap 3 -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <script src="/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <script src="/js/index.js"></script>
+    <% if (isJStrue) { %>
+        <script src="js/<%= file %>.js"></script>
+    <% } %>
+    <% if (isCSStrue) { %>
+        <link rel="stylesheet" href="/css/<%= file %>.css">
+    <% } %>
+</head>
+<body>
+    
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#nav-target">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="nav-target">
+                <ul class="nav navbar-nav">
+                    <% for(i=0;i<navbar.length;i++){ %>
+                        <li><a class="nav-links" href="<%- "/"+encodeURIComponent(navbar[i].link) %>" style="text-transform: capitalize;"><%- navbar[i].text %></a></li>
+                    <% } %>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a class="nav-links" onclick="flip()"><span class="glyphicon glyphicon-adjust"></span> Dark Mode</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container content">
+        <%- content %>
+    </div>
+</body>
+
+<style>
+
+</style>
+
+
+</html>

@@ -1,0 +1,35 @@
+:root{
+    color-scheme:unset;
+}
+html{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+    display: none;
+}
+.content{
+    margin-bottom: 30vh !important;
+}
+.navbar{
+    border-radius: 0 !important;
+    user-select: none;
+}
+a {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    -webkit-tap-highlight-color: transparent !important;
+    cursor: pointer;
+}
+
+body{
+    background-color: light-dark(white,#222222) !important;
+    color: light-dark(black,white) !important;
+}
+a:not(.nav-links):hover{
+    color: light-dark(#23527C,#43A2F2) !important;
+}
+li{
+    margin-bottom: 2px;
+}
